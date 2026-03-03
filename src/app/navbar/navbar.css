@@ -1,0 +1,162 @@
+section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.1rem 3rem;
+  height: 72px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+  position: relative;
+  overflow: hidden;
+}
+
+section::before {
+  content: '';
+  position: absolute;
+  left: -40px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, var(--accent-glow), transparent 45%);
+  pointer-events: none;
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  position: relative;
+  z-index: 1;
+  gap: 0.06rem;
+  cursor: pointer;
+}
+
+.p1 {
+  font-family: 'OpenSauceBold';
+  font-weight: 400;
+  font-size: 1.8rem;
+  color: var(--text);
+  letter-spacing: 0.03em;
+  line-height: 1;
+}
+
+.p2 {
+  font-family: 'TheSeasons';
+  font-size: 2rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text);
+  letter-spacing: 0.05em;
+  line-height: 1;
+}
+
+.topics {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  gap: 2.25rem;
+}
+
+li {
+  text-decoration: none;
+}
+
+li a {
+  font-family: 'OpenSauceLight';
+  font-size: 1.2rem;
+  color: var(--muted);
+  letter-spacing: 0.03rem;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.22s ease;
+}
+
+li a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--violet);
+  box-shadow: 0 0 8px var(--accent-glow);
+  transition: width 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+li a:hover {
+  color: var(--text);
+}
+li a:hover::after {
+  width: 100%;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 10;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  background: var(--text);
+  border-radius: 2px;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+  padding: 1.25rem 3rem 1.5rem;
+  gap: 1.25rem;
+  position: relative;
+  z-index: 5;
+}
+
+.mobile-menu.open {
+  display: flex;
+}
+
+.mobile-menu a {
+  font-family: 'OpenSauceLight';
+  font-size: 1.1rem;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.22s ease;
+}
+
+.mobile-menu a:hover {
+  color: var(--text);
+}

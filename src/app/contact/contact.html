@@ -1,0 +1,54 @@
+<section class="contact">
+  <button type="button" class="btn-back" onclick="history.back()">
+    <span class="btn-back-arrow">«</span>
+    Back
+  </button>
+  <div class="contact-header">
+    <span class="contact-tag">Get in touch</span>
+    <h2>Let's build something together</h2>
+    <p>Tell us about your brand and goals. We'll get back to you within 24 hours.</p>
+  </div>
+
+  <form class="contact-form" [formGroup]="contactForm" (ngSubmit)="submit()">
+    <div class="form-row">
+      <div class="form-field">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="XYZ ABC" formControlName="name" />
+      </div>
+      <div class="form-field">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="xyzabc@company.com" formControlName="email" />
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-field">
+        <label for="company">Company</label>
+        <input type="text" id="company" placeholder="Your company" formControlName="company" />
+      </div>
+      <div class="form-field">
+        <label for="service">Service</label>
+        <select id="service" formControlName="service">
+          <option value="" disabled selected>Select a service</option>
+          <option value="growth">Digital Growth</option>
+          <option value="branding">Brand Strategy</option>
+          <option value="campaigns">Digital Campaigns</option>
+          <option value="corporate">Corporate Scaling</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-field">
+      <label for="message">Message</label>
+      <textarea
+        id="message"
+        placeholder="Tell us about your project..."
+        formControlName="message"
+      ></textarea>
+    </div>
+
+    <div class="form-divider"></div>
+
+    <button type="submit" class="btn-submit" [disabled]="contactForm.invalid" >Send Message</button>
+  </form>
+</section>

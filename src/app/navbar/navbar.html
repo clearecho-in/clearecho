@@ -1,0 +1,29 @@
+<section>
+  <div class="logo">
+    <div class="p1">clear</div>
+    <div class="p2">echo</div>
+  </div>
+  <div class="topics">
+    <ul>
+      <li><a (click)="scrollTo('how-it-works')">How it works</a></li>
+      <li><a routerLink="/benefits">Benefits</a></li>
+      <li><a (click)="scrollTo('faqs')">FAQs</a></li>
+      <li><a routerLink="/contact">Contact</a></li>
+    </ul>
+  </div>
+  <button
+    class="hamburger"
+    onclick="
+      this.classList.toggle('open');
+      document.querySelector('.mobile-menu').classList.toggle('open');
+    "
+  >
+    <span></span><span></span><span></span>
+  </button>
+</section>
+<nav class="mobile-menu">
+  <a (click)="scrollTo('how-it-works')">How it works</a>
+  <a routerLink="/benefits">Benefits</a>
+  <a (click)="scrollTo('faqs')">FAQs</a>
+  <a routerLink="/contact">Contact</a>
+</nav>

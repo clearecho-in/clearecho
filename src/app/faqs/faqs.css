@@ -1,0 +1,224 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+h2 {
+  font-family: 'OpenSauceBold';
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  text-align: center;
+  margin: 0;
+  position: relative;
+  display: inline-block;
+}
+
+h2::after {
+  content: '';
+  display: block;
+  margin: 0.5rem auto 0;
+  width: 40px;
+  height: 2px;
+  background: var(--violet);
+  border-radius: 2px;
+  opacity: 0.8;
+}
+
+#faqs {
+  padding: 6rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+#faqs::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70vw;
+  height: 60vh;
+  background: radial-gradient(ellipse at center, var(--accent-glow), transparent 68%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+#faqs > * {
+  position: relative;
+  z-index: 1;
+}
+
+#faqs .container {
+  flex-direction: column;
+  gap: 3rem;
+  padding: 0 2rem 4rem;
+}
+
+.faqs-tag {
+  font-family: 'OpenSauceLight';
+  font-size: 1rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--violet);
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  opacity: 0.85;
+}
+
+.faqs-tag::before,
+.faqs-tag::after {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: var(--violet);
+  opacity: 0.45;
+}
+
+.faqs-subtitle {
+  font-family: 'OpenSauceLight';
+  font-size: 1.2rem;
+  color: var(--muted);
+  line-height: 1.8;
+  letter-spacing: 0.03em;
+  margin: 0;
+  max-width: 760px;
+  text-align: center;
+}
+
+.faqs-list {
+  width: min(65vw, 860px);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 0 2rem;
+}
+
+.faq-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.faq-item:first-child {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.4rem 0;
+  text-align: left;
+}
+
+.faq-question-text {
+  font-family: 'OpenSauceLight';
+  font-size: 1.2rem;
+  color: var(--text);
+  letter-spacing: 0.03em;
+  line-height: 1.5;
+  opacity: 0.75;
+  transition:
+    opacity 0.25s ease,
+    color 0.25s ease;
+}
+
+.faq-question:hover .faq-question-text {
+  opacity: 1;
+}
+
+.faq-item.open .faq-question-text {
+  opacity: 1;
+}
+
+.faq-icon {
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
+  border: 1px solid rgba(155, 77, 202, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  transition:
+    border-color 0.3s ease,
+    background 0.3s ease,
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.faq-icon::before {
+  content: '';
+  position: absolute;
+  width: 9px;
+  height: 1.5px;
+  background: var(--violet);
+  border-radius: 2px;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.faq-icon::after {
+  content: '';
+  position: absolute;
+  width: 1.5px;
+  height: 9px;
+  background: var(--violet);
+  border-radius: 2px;
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.25s ease;
+}
+
+.faq-item.open .faq-icon {
+  border-color: var(--violet);
+  background: rgba(155, 77, 202, 0.1);
+  transform: rotate(45deg);
+}
+
+.faq-question:hover .faq-icon {
+  border-color: rgba(155, 77, 202, 0.55);
+}
+
+.faq-answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.faq-item.open .faq-answer {
+  grid-template-rows: 1fr;
+}
+
+.faq-answer-inner {
+  overflow: hidden;
+  font-family: 'OpenSauceLight';
+  font-size: 1.03rem;
+  color: var(--muted);
+  line-height: 1.85;
+  letter-spacing: 0.03em;
+  padding: 0 3rem 0 0;
+  max-width: 92%;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition:
+    opacity 0.35s ease 0.05s,
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1) 0.05s;
+}
+
+.faq-item.open .faq-answer-inner {
+  opacity: 1;
+  transform: translateY(0);
+  padding-bottom: 1.5rem;
+}

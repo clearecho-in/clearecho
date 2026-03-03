@@ -1,1 +1,48 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --bg: #08050d;
+  --surface: #100d18;
+  --accent: #50007b;
+  --accent-glow: rgba(80, 0, 123, 0.18);
+  --violet: #9b4dca;
+  --text: #f4e9da;
+  --muted: #a090b8;
+  --line: rgba(255, 255, 255, 0.06);
+}
+
+body {
+  background: var(--bg);
+  min-height: 100vh;
+}
+
+@font-face {
+  font-family: 'OpenSauceLight';
+  src: url('assets/fonts/OpenSauceOne-Light.21cf5a80fc5777c6aed04.22ff9d894b6467b3ddab0f1989a2cb4d.otf');
+}
+
+@font-face {
+  font-family: 'OpenSauceRegular';
+  src: url('assets/fonts/OpenSauceOne-Bold.d6dc9a445582372bfb5063.c19f8e9cab364abc00a750036f731e21.otf')
+    format('opentype');
+}
+
+@font-face {
+  font-family: 'OpenSauceBold';
+  src: url('assets/fonts/OpenSauceOne-Regular.036bb82edc07f1cfb21.88a36cab6d7cfa75bff7e49535b9642a.otf')
+    format('opentype');
+}
+
+@font-face {
+  font-family: 'TheSeasons';
+  src: url('assets/fonts/theseasons-it.51242d8c8d19d83930e2eeb13a.bfedac7e767c1b82a7f3292d91729fa8.otf')
+    format('opentype');
+}
+
+@font-face {
+  font-family: 'MontserratLight';
+  src: url('assets/fonts/Montserrat-Light.0e307add03dade7539d0c10.9f211f1e580dd0c34c98242b67b454a1.otf');
+}

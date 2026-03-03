@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+h2 {
+  font-family: 'OpenSauceBold';
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  text-align: center;
+  margin: 0;
+  position: relative;
+  display: inline-block;
+}
+
+h2::after {
+  content: '';
+  display: block;
+  margin: 0.5rem auto 0;
+  width: 40px;
+  height: 2px;
+  background: var(--violet);
+  border-radius: 2px;
+  opacity: 0.8;
+}
