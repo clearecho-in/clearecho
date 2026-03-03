@@ -1,4 +1,9 @@
-<main>
-  <router-outlet />
-  <app-footer />
-</main>
+@if (isLoading()) {
+  <app-loader />
+} @else {
+  <main>
+    <router-outlet />
+    <app-footer />
+    <app-dialog />
+  </main>
+}

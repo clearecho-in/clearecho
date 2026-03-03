@@ -258,3 +258,33 @@
   background: #6a009e;
   box-shadow: 0 0 28px rgba(80, 0, 123, 0.5);
 }
+
+.error-text {
+  color: #ff4d4d;
+  font-size: 0.75rem;
+  font-family: 'OpenSauceLight';
+  margin-top: 0.4rem;
+  display: block;
+}
+
+.error-border {
+  border-color: rgba(255, 77, 77, 0.5) !important;
+  background: rgba(255, 77, 77, 0.02) !important;
+}
+
+.btn-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  filter: grayscale(0.8);
+  border-color: rgba(80, 0, 123, 0.1);
+}
+
+@keyframes buttonPulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+.btn-submit:disabled:not([disabled="false"]) {
+  animation: buttonPulse 1.5s infinite ease-in-out;
+}

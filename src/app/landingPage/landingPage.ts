@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -8,17 +8,7 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./landingPage.css', './landingPage.media.css'],
   imports: [CommonModule],
 })
-export class LandingPageComponent implements OnInit {
-  isLoading = true;
-
-  ngOnInit(): void {
-    console.log('LandingPage Init');
-    setTimeout(() => {
-      console.log('Timeout triggered');
-      this.isLoading = false;
-    }, 3000);
-  }
-
+export class LandingPageComponent {
   scrollTo(sectionId: string) {
     const element = document.getElementById(sectionId);
     if (element) {

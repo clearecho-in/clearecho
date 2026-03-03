@@ -13,11 +13,37 @@
     <div class="form-row">
       <div class="form-field">
         <label for="name">Full Name</label>
-        <input type="text" id="name" placeholder="XYZ ABC" formControlName="name" />
+        <input
+          type="text"
+          id="name"
+          placeholder="XYZ ABC"
+          formControlName="name"
+          [class.error-border]="
+            contactForm.get('name')?.invalid && contactForm.get('name')?.touched
+          "
+        />
+        @if (contactForm.get('name')?.touched && contactForm.get('name')?.invalid) {
+          <span class="error-text">Name is required</span>
+        }
       </div>
+
       <div class="form-field">
         <label for="email">Email Address</label>
-        <input type="email" id="email" placeholder="xyzabc@company.com" formControlName="email" />
+        <input
+          type="email"
+          id="email"
+          placeholder="xyzabc@company.com"
+          formControlName="email"
+          [class.error-border]="
+            contactForm.get('email')?.invalid && contactForm.get('email')?.touched
+          "
+        />
+        @if (contactForm.get('email')?.touched && contactForm.get('email')?.errors?.['email']) {
+          <span class="error-text">Please enter a valid email address</span>
+        }
+        @if (contactForm.get('email')?.touched && contactForm.get('email')?.errors?.['required']) {
+          <span class="error-text">Email is required</span>
+        }
       </div>
     </div>
 
@@ -28,7 +54,13 @@
       </div>
       <div class="form-field">
         <label for="service">Service</label>
-        <select id="service" formControlName="service">
+        <select
+          id="service"
+          formControlName="service"
+          [class.error-border]="
+            contactForm.get('service')?.invalid && contactForm.get('service')?.touched
+          "
+        >
           <option value="" disabled selected>Select a service</option>
           <option value="growth">Digital Growth</option>
           <option value="branding">Brand Strategy</option>
@@ -44,11 +76,20 @@
         id="message"
         placeholder="Tell us about your project..."
         formControlName="message"
+        [class.error-border]="
+          contactForm.get('message')?.invalid && contactForm.get('message')?.touched
+        "
       ></textarea>
+      @if (contactForm.get('message')?.touched && contactForm.get('message')?.invalid) {
+        <span class="error-text">Please share your project goals</span>
+      }
     </div>
 
     <div class="form-divider"></div>
 
-    <button type="submit" class="btn-submit" [disabled]="contactForm.invalid" >Send Message</button>
+    <button type="submit" class="btn-submit" [disabled]="contactForm.invalid || isSubmitting">
+      {{ isSubmitting ? 'Sending...' : 'Send Message' }}
+    </button>
   </form>
 </section>
+

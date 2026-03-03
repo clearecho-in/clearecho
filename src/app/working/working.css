@@ -1,30 +1,137 @@
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-}
-
-h2 {
-  font-family: 'OpenSauceBold';
-  font-size: clamp(2rem, 3.5vw, 3rem);
-  font-weight: 700;
-  color: var(--text);
-  letter-spacing: -0.02em;
-  line-height: 1.1;
-  text-align: center;
-  margin: 0;
+.process-section {
+  padding: 8rem 0;
   position: relative;
-  display: inline-block;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
 }
 
-h2::after {
+.process-section::before {
   content: '';
-  display: block;
-  margin: 0.5rem auto 0;
-  width: 40px;
-  height: 2px;
-  background: var(--violet);
-  border-radius: 2px;
-  opacity: 0.8;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70vw;
+  height: 60vh;
+  background: radial-gradient(ellipse at center, rgba(80, 0, 123, 0.08) 0%, transparent 68%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.process-section .container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: min(85vw, 1200px);
+}
+
+.process-section h2 {
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  color: var(--text);
+  line-height: 1.1;
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.process-section #normal-text {
+  font-family: 'MontserratLight';
+  letter-spacing: 0.03em;
+}
+.process-section #bold-text {
+  font-family: 'OpenSauceBold';
+  letter-spacing: 0.03em;
+}
+.process-section #italics-text {
+  font-family: 'TheSeasons';
+  font-style: italic;
+  letter-spacing: 0.05em;
+  color: var(--violet);
+}
+
+.subtitle {
+  font-family: 'OpenSauceLight';
+  font-size: 1.2rem;
+  color: var(--muted);
+  line-height: 1.6;
+  text-align: center;
+  margin-bottom: 5rem;
+  max-width: 800px;
+  letter-spacing: 0.05em;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  width: 100%;
+}
+
+.process-card {
+  padding: 3rem 2rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.123);
+  border-radius: 4px;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.process-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--violet);
+  background: rgba(80, 0, 123, 0.04);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.step-number {
+  font-family: 'OpenSauceBold';
+  font-size: 3.5rem;
+  color: var(--violet);
+  opacity: 0.07;
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+}
+
+.icon-wrapper {
+  color: var(--accent);
+  width: 38px;
+  height: 38px;
+  margin-bottom: 2rem;
+}
+
+.process-card h4 {
+  font-family: 'OpenSauceBold';
+  letter-spacing: 0.03em;
+  font-size: 1.3rem;
+  color: var(--text);
+  margin-bottom: 1.2rem;
+}
+
+.process-card p {
+  font-family: 'OpenSauceLight';
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.process-card {
+  animation: heroFadeUp 0.8s both;
+}
+
+.process-card:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.process-card:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.process-card:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.process-card:nth-child(4) {
+  animation-delay: 0.5s;
 }

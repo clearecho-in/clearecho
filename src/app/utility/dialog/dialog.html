@@ -1,0 +1,18 @@
+@if (dialog.isOpen()) {
+  <div class="dialog-backdrop" (click)="dialog.close()">
+    <div class="dialog-box" (click)="$event.stopPropagation()">
+      <div class="corner-tl"></div>
+      <div class="corner-br"></div>
+
+      <div class="dialog-content">
+        <h3>{{ dialog.message() }}</h3>
+
+        <div class="dialog-cta">
+          <button class="btn-primary" (click)="dialog.close()">
+            <span>OK</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+}

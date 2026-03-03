@@ -4,6 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-working',
   standalone: true,
   templateUrl: './working.html',
-  styleUrls: ['./working.css', './working.media.css'],
+  styleUrls: ['./working.css'],
 })
 export class WorkingComponent {}

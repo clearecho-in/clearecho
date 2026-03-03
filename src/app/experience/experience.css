@@ -1,0 +1,133 @@
+.experience-section {
+  padding: 5rem 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.experience-section .container {
+  width: min(85vw, 1200px);
+  position: relative;
+  z-index: 2;
+}
+
+.experience-section h2 {
+  font-size: clamp(2.5rem, 4.5vw, 4rem);
+  color: var(--text);
+  margin: 1.5rem 0 5rem;
+  text-align: center;
+  line-height: 1.1;
+}
+
+.experience-section #normal-text { font-family: 'MontserratLight'; }
+.experience-section #bold-text { font-family: 'OpenSauceBold'; }
+.experience-section #italics-text { 
+  font-family: 'TheSeasons'; 
+  font-style: italic; 
+  color: var(--violet); 
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 6rem;
+  align-items: flex-start;
+}
+
+.metrics-column {
+  display: flex;
+  flex-direction: column;
+  gap: 4.5rem;
+}
+
+.big-number {
+  font-family: 'OpenSauceBold';
+  font-size: clamp(4rem, 6vw, 6.5rem);
+  color: var(--violet);
+  line-height: 0.9;
+}
+
+.big-number small {
+  font-size: 1.5rem;
+  letter-spacing: 0.02em;
+  color: var(--text);
+  font-family: 'OpenSauceLight';
+}
+
+.metric-item .label {
+  font-family: 'OpenSauceLight';
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--text);
+  font-size: 0.9rem;
+  margin: 1.2rem 0;
+  display: block;
+}
+
+.metric-item p {
+  font-family: 'OpenSauceLight';
+  color: var(--muted);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 340px;
+}
+
+.narrative-column {
+  padding-left: 5rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.123)
+}
+
+.description {
+  font-family: 'OpenSauceLight';
+  font-size: 1.55rem;
+  line-height: 1.65;
+  color: var(--text);
+  margin-bottom: 2.5rem;
+  letter-spacing: 0.03em;
+}
+
+.description strong {
+  font-family: 'OpenSauceBold';
+  color: var(--violet);
+}
+
+.brand-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-bottom: 3rem;
+}
+
+.brand-chips span {
+  font-family: 'MontserratLight';
+  font-size: 1rem;
+  color: var(--muted);
+  padding: 0.5rem 1.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.123);
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.secondary-text {
+  font-family: 'OpenSauceLight';
+  font-size: 1.15rem;
+  color: var(--muted);
+  line-height: 1.8;
+  letter-spacing: 0.03em;
+}
+
+@media (max-width: 1024px) {
+  .experience-grid {
+    grid-template-columns: 1fr;
+    gap: 5rem;
+  }
+  
+  .narrative-column {
+    padding-left: 0;
+    border-left: none;
+    border-top: 1px solid rgba(80, 0, 123, 0.15);
+    padding-top: 4rem;
+  }
+}
